@@ -24,3 +24,8 @@ spec:
   containers:
   - name: with-node-affinity
     image: nginx
+
+    # Node Affinity is used to set rules for scheduling Pods on specific nodes based on node labels
+    # In this example, we are using preferredDuringSchedulingIgnoredDuringExecution to prefer nodes with 
+    # the label 'another-node-label-key=another-node-label-value'
+    # The weight of 1 indicates the preference level for scheduling on those nodes
