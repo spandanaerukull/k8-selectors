@@ -11,5 +11,15 @@ spec:
     imagePullPolicy: Always
   nodeSelector:
     disktype: ssd
+  tolerations: # Tolerations to allow the Pod to be scheduled on tainted nodes
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoExecute" # Toleration for NoExecute taint
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoSchedule"  # Toleration for NoSchedule taint
+    # Tolerations are used to allow this Pod to be scheduled on nodes that have specific taints
     # NodeSelector is used to schedule this Pod on nodes with the label 'disktype=ssd'
     # This ensures that the Pod runs only on nodes that have SSD storage
