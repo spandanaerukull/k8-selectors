@@ -9,7 +9,7 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: Always # Always means pull the latest image of nginx
-  nodeSelector:
+  nodeSelector: # NodeSelector to specify node selection criteria
     disktype: ssd
     # NodeSelector is used to schedule this Pod on nodes with the label 'disktype=ssd'
     # This ensures that the Pod runs only on nodes that have SSD storage
